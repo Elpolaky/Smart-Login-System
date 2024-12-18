@@ -93,7 +93,13 @@ function clearForm() {
 }
 
 function signUpValidation(info) {
-  let savedusers = [...usersInfoList] || [];
+  let savedusers ;
+  try {
+   savedusers = [...usersInfoList] || [];
+
+  } catch (error) {
+    console.log(error); 
+  }
   let message = "";
   let result = false;
 
@@ -199,7 +205,13 @@ function updateCureentPage() {
 }
 
 function signInValidation() {
-  let savedusers = [...usersInfoList] || [];
+  let savedusers ;
+  try {
+     savedusers = [...usersInfoList] || [];
+
+  } catch (error) {
+    console.log(error);
+  }
   let userIndex = savedusers.findIndex(
     (userinfo) => userinfo.email == userInput[1].value
   );
