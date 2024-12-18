@@ -9,7 +9,7 @@ let logOut = document.querySelector("#logOut");
 let nav = document.querySelector("nav");
 let succesfulMessage = document.querySelector("#succesfulMessage");
 
-let usersInfoList = [];
+let usersInfoList = ["intiate", "intiate"];
 const signUp = 1;
 const signIn = 2;
 const home = 3;
@@ -19,6 +19,7 @@ const userKey = "users";
 
 (function () {
   if (localStorage.length) {
+    usersInfoList = [];
     usersInfoList = JSON.parse(localStorage.getItem(userKey));
   }
   for (const input of userInput) {
@@ -93,12 +94,11 @@ function clearForm() {
 }
 
 function signUpValidation(info) {
-  let savedusers ;
+  let savedusers;
   try {
-   savedusers = [...usersInfoList] || [];
-
+    savedusers = [...usersInfoList] || [];
   } catch (error) {
-    console.log(error); 
+    console.log(error);
   }
   let message = "";
   let result = false;
@@ -205,13 +205,11 @@ function updateCureentPage() {
 }
 
 function signInValidation() {
-  let savedusers ;
-  try {
-     savedusers = [...usersInfoList] || [];
-
-  } catch (error) {
-    console.log(error);
+  if (!usersInfoList) {
+    usersInfoList = []; // Ensure it's an array
   }
+  let savedusers = [...usersInfoList];
+
   let userIndex = savedusers.findIndex(
     (userinfo) => userinfo.email == userInput[1].value
   );
