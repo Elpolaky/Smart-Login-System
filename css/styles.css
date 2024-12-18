@@ -1,0 +1,94 @@
+nav{
+  box-shadow: 0px 0px 15px 15px rgba(0, 0, 0, 0.318);
+  h5{
+    color: #17a2b8;
+
+  }
+  span{
+  
+    --bs-navbar-brand-color: #B6B6B6;;
+  }
+  .navbar-brand:focus, .navbar-brand:hover {
+  --bs-navbar-brand-hover-color : white
+}
+  #logOut{
+    cursor: pointer;
+    color:  #B6B6B6; ;
+    i{
+      opacity: 0;
+      transition: all .3s;
+    }
+    &:hover{
+      i  {
+        opacity: 100%;
+      }    
+
+    }
+  }
+}
+
+main {
+  background-color: #24353f;
+
+  section {
+    width: 80%;
+    box-shadow: 0px 0px 15px 15px #dae2e323;
+  }
+  h1 {
+    color: #17a2b8;
+  }
+  h2{
+    color: #B6B6B6;
+
+  }
+  label {
+    color: white;
+  }
+
+  .btn-light{
+    --bs-btn-bg: transparent;
+    --bs-btn-border-color: #17a2b8;
+    --bs-btn-color: #17a2b8;
+
+    --bs-btn-hover-bg: #17a2b8;
+    --bs-btn-hover-border-color:transparent;
+    --bs-btn-hover-color: white;
+  }
+  span{
+   text-decoration: none;   
+   &:hover{
+    text-decoration: underline;   
+    cursor: pointer;
+   }
+  }
+}
+.form-control {
+  --bs-body-bg: #24353f;
+  background-color: transparent;
+  --bs-body-color: #B6B6B6;
+  /* var(--bs-border-color); */
+  &:focus {
+    border-color: #86b7fe;
+    box-shadow: 0 0 0 0.25rem #17a3b834;
+  }
+  &::placeholder {
+    color: #b6b6b676;
+  }
+
+}
+
+.invalidInfoHide{
+  width: 100%;
+  position: absolute;
+  left: -350rem;
+  transition: all .7s;
+}
+
+.invalidInfoShow{
+  transition: all .7s ;
+  width: 100%;
+  position: relative;
+  left: 0%;
+  margin-bottom: 1rem;
+  font-size: .8rem;
+}
