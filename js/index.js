@@ -9,17 +9,18 @@ let logOut = document.querySelector("#logOut");
 let nav = document.querySelector("nav");
 let succesfulMessage = document.querySelector("#succesfulMessage");
 
-let usersInfoList = ["intiate", "intiate"];
+let usersInfoList = ["intiate", "intiate"];//random vaue to aviod error
 const signUp = 1;
 const signIn = 2;
 const home = 3;
-let pageStatus = signIn;
 const displayNone = "d-none";
 const userKey = "users";
+let pageStatus = signIn;
+
 
 (function () {
   if (localStorage.length) {
-    usersInfoList = [];
+    usersInfoList = []; // clear the random value 
     usersInfoList = JSON.parse(localStorage.getItem(userKey));
   }
   for (const input of userInput) {
